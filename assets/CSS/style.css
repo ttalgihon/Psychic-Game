@@ -1,3 +1,9 @@
-html {
+html { 
     background-color: cornflowerblue;
+}
+body {
+    background-color: azure;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
 }
