@@ -1,57 +1,39 @@
-// This is a for-loop that contains the alphabet in lower case.
+// This is a for-loop that contains the alphabet in lower case. (works)
 let alphabet = "";
 for (let i = 97; i <= 122; i++) {
     alphabet += String.fromCharCode(i)
+    // A variable that randomly picks a letter from var 'alphabet' for the computer.
+    var pickedcomputerletter = alphabet[Math.floor(Math.random()*alphabet.length)];
 };
+console.log(alphabet);
+console.log(pickedcomputerletter);
 
 // Create an object
 var gamestats = {
     win: 0,
     lose: 0,
     numGuessleft: 9,
-    playerChoice: [],
+    playerChoice: [""],
 };
 
-//Display the object gamestats data in the html.
-document.getElementById("winP").textContent = gamestats.win;
-document.getElementById("loseP").textContent = gamestats.lose;
-document.getElementById("guessP").textContent = gamestats.numGuessleft;
-document.getElementById("demo").textContent = gamestats.playerChoice;
-
-// A variable that randomly picks a letter from var 'alphabet' for the computer.
-let pickedcomputerletter = alphabet[Math.floor(Math.random()*alphabet.length)];
+// //Display the object gamestats data in the html.
+// document.getElementById("winP").textContent = gamestats.win;
+// document.getElementById("loseP").textContent = gamestats.lose;
+// document.getElementById("guessP").textContent = gamestats.numGuessleft;
+// document.getElementById("demo").textContent = gamestats.playerChoice;
 
 // A variable that holds the letter pressed by the player in lower case then,
 // pushed that letter into an array called playerchoices.
-let pickedplayerletter = document.onkeypress.key.toLowerCase();
+let pickedplayerletter = document.onkeypress.toLowerCase();
 gamestats.playerChoice.push(pickedplayerletter);
+console.log(pickedplayerletter);
 
-//keypress holds the letter.
-// playerchoice holds all the keys pressed by the player.
-
-// // if the pickedletter by the computer equals the playerchoice letter that was typed...
-// // it will add +1 to the win variable.
-// var isDuplicate = false;
-// for (var i = 0; i<=9; i++) {
-//     if ( pickedletter == playerChoice[i]) {
-//         isDuplicate = true;
-//         win++;
-//         break;
-//     }
-// }
-
-// document.onkeypress = function(event) {
-//     keyPressed =event.key.toLocaleLowerCase;
-//     var pickedletter = alphabet[Math.floor(Math.random() * alphabet.length)];
-//     if (alphabet.indexOf(keyPressed) > -1) {
-//         if (keyPressed === pickedletter) {
-//             wins++;
-//             numGuessleft = 9;
-//             playerChoice [];
-//         }
-//         if ( keyPressed != pickingletter) {
-//             numGuessleft --;
-//             playerChoice [];
-//         }
-//     }
-// };
+let pickedPlayerLetter;
+document.onkeypress = function storingpressedkey(letter) {
+    pickedPlayerLetter = letter.key.toLowerCase();
+    // if pickedplayer letter is = to computerpicked letter
+    //THEN it will change win by ++
+    // if they do NOT = 
+    //THEN take away from guessesleft -- by one and put the playerpicked letter in the playerchoice array. 
+    
+}
