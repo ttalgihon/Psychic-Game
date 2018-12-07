@@ -16,24 +16,32 @@ var gamestats = {
     playerChoice: [""],
 };
 
-// //Display the object gamestats data in the html.
-// document.getElementById("winP").textContent = gamestats.win;
-// document.getElementById("loseP").textContent = gamestats.lose;
-// document.getElementById("guessP").textContent = gamestats.numGuessleft;
-// document.getElementById("demo").textContent = gamestats.playerChoice;
+//Display the object gamestats data in the html.
+console.log(gamestats);
+console.log(gamestats.win); 
+document.getElementById("winP").innerHTML = gamestats.win;
+document.getElementById("loseP").textContent = gamestats.lose;
+document.getElementById("guessP").textContent = gamestats.numGuessleft;
+document.getElementById("demo").textContent = gamestats.playerChoice;
 
 // A variable that holds the letter pressed by the player in lower case then,
 // pushed that letter into an array called playerchoices.
-let pickedplayerletter = document.onkeypress.toLowerCase();
-gamestats.playerChoice.push(pickedplayerletter);
-console.log(pickedplayerletter);
+// let pickedplayerletter = document.onkeypress.toLowerCase();
+// gamestats.playerChoice.push(pickedplayerletter);
+// console.log(pickedplayerletter);
 
 let pickedPlayerLetter;
-document.onkeypress = function storingpressedkey(letter) {
+document.onkeyup = function storingpressedkey(letter) {
     pickedPlayerLetter = letter.key.toLowerCase();
-    // if pickedplayer letter is = to computerpicked letter
-    //THEN it will change win by ++
-    // if they do NOT = 
-    //THEN take away from guessesleft -- by one and put the playerpicked letter in the playerchoice array. 
-    
+    if (condition) {
+        
+    } else {
+        
+    }
 }
+
+
+// if pickedplayer letter is = to computerpicked letter
+//THEN it will change win by ++
+// if they do NOT = 
+//THEN take away from guessesleft -- by one and put the playerpicked letter in the playerchoice array. 
