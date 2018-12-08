@@ -2,9 +2,9 @@
 let alphabet = "";
 for (let i = 97; i <= 122; i++) {
     alphabet += String.fromCharCode(i)
-    // A variable that randomly picks a letter from var 'alphabet' for the computer.
-    var pickedcomputerletter = alphabet[Math.floor(Math.random()*alphabet.length)];
+    // A variable that randomly picks a letter from var 'alphabet' for the computer.  
 };
+var pickedcomputerletter = alphabet[Math.floor(Math.random()*alphabet.length)];
 console.log(alphabet);
 console.log(pickedcomputerletter);
 
@@ -15,7 +15,6 @@ var gamestats = {
     numGuessleft: 9,
     playerChoice: [""],
 };
-
 //Display the object gamestats data in the html.
 console.log(gamestats);
 console.log(gamestats.win); 
@@ -26,6 +25,7 @@ document.getElementById("demo").textContent = gamestats.playerChoice;
 
 // A variable that holds the letter pressed by the player in lower case then,
 // pushed that letter into an array called playerchoices.
+
 // let pickedplayerletter = document.onkeypress.toLowerCase();
 // gamestats.playerChoice.push(pickedplayerletter);
 // console.log(pickedplayerletter);
@@ -33,13 +33,16 @@ document.getElementById("demo").textContent = gamestats.playerChoice;
 let pickedPlayerLetter;
 document.onkeyup = function storingpressedkey(letter) {
     pickedPlayerLetter = letter.key.toLowerCase();
-    if (condition) {
+    if (pickedcomputerletter === pickedPlayerLetter && gamestats.numGuessleft != 0) {
+        gamestats.win++;
         
     } else {
-        
-    }
-}
-
+        gamestats.lose++;
+        gamestats.numGuessleft--;
+        gamestats['playerChoice']= pickedPlayerLetter;    
+    };
+    
+};
 
 // if pickedplayer letter is = to computerpicked letter
 //THEN it will change win by ++
